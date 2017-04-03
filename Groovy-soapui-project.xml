@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="f5e194a7-a687-4c51-8c56-dc1363f1d48e" activeEnvironment="Default" name="Groovy" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:testSuite id="b0651b72-c027-44f6-bf59-a90d50533ac8" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="ee259808-fb7a-4a73-b922-a3230d4bbc78" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Groovy Script" id="6b678769-1a03-4b8d-85ae-4a67258517f1"><con:settings/><con:config><script>
+// Printing
+
+log.info "new soap UI project"
+//decalring
+
+def Student ="Sid"
+def sessions = 40
+//def sessions2= true
+
+//we can use assert keyword to validate
+assert sessions==40
+
+log.info Student
+log.info"No.of videos prsent" +sessions
+//we can also concatinate like this
+log.info"No.of videos prsent $sessions"
+
+//if condition
+if(sessions==40){
+	log.info"Success"
+	}
+	else{
+		log.info"Unsucess"
+		}
+
+//for loop
+for(int i=0;i&lt;10;i++) //we can use def instead of int,both works
+{
+	log.info i
+	}
+
+//while loop
+def j=1
+while(j&lt;5)
+{
+	log.info j
+	j++;
+	}
+
+//Arrays
+def abc=new String[5]  //Array declaration 
+abc[0]="Soap"
+abc[1]="Online"
+abc[2]="training"
+abc[3]="IT"
+abc[4]="UI"
+log.info abc.size()
+//for loop with arrays
+for(def k=0;k&lt;5;k++)
+{
+	log.info abc[k]
+	}
+
+log.info"Array size"+abc.size()	
+
+</script></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script2" id="d77c7e90-3c5e-413b-99fb-174021648e8b"><con:settings/><con:config><script>dynamic array
+def terms["SoapUI","Training","online","IT"] // declare everything in single step by using terms variable
+log.info terms[0]
+log.info terms[2]
+for(def i=0;i&lt;4;i++){
+	//log.info terms[i]
+	}
+
+//Exceptions
+//checking particula check point, and dont want to stop execution even script fails.we can use exceptopns
+
+	try{
+		def x=4/0 // script should fail
+		}
+	catch(Exception e)
+	{
+		log.info"script not able to handle"
+		
+	}
+
+//Atrray list, we can add as many elements we want, no restrictions
+ArrayList ar=new ArrayList()
+ar.add("a")
+log.info ar.get(0)
+ar.add("b")
+log.info ar.get(1)
+
+//Hash table
+Hashtable ht = new Hashtable()
+ht.put("Name","Soap")
+ht.put("Course","IT")
+ht.info ht.get("Name")
+</script></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script3" id="2977c97f-91ce-452e-95c8-f02ebde49a0b"><con:settings/><con:config><script>//Hash table
+Hashtable ht = new Hashtable()
+ht.put("Name","Soap")
+ht.put("Course","IT")
+ht.info ht.get("Name")
+
+//Map
+def names=[Name:"Soap","Course":"IT"]
+log.info names["Name"]
+
+//List
+def Course=[1,2,"Soap",4,5]
+log.info course[2]
+log.info course[4]
+
+</script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
